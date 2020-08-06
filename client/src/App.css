@@ -13,8 +13,24 @@ body {
 
 .topbar-apr {
   background-color: #fefced;
-  height: 30px;
+  height: 25px;
   margin: 0px;
   padding: 5px;
+  padding-top: 10px;
   width: calc(100% - 10px);
+}
+
+.apr-classification-container {
+  background-color: #4bc24a;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 5px;
+  margin-top: 3px;
+  border-radius: 2px;
+}
+
+.apr-no {
+  font-size: 13px;
+  margin-left: 10px;
 }
