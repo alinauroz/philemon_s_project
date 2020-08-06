@@ -9,6 +9,8 @@ body {
   border: 1px solid #ebebeb;
   border-radius: 3px;
   overflow: hidden;
+  margin: 10px;
+  display: inline-block;
 }
 
 .topbar-apr {
@@ -18,6 +20,7 @@ body {
   padding: 5px;
   padding-top: 10px;
   width: calc(100% - 10px);
+  margin-bottom: 10px;
 }
 
 .apr-classification-container {
@@ -33,4 +36,14 @@ body {
 .apr-no {
   font-size: 13px;
   margin-left: 10px;
+}
+
+.body-apr {
+  font-size: 13px;
+  width: calc(100% - 10px);
+  padding: 5px;
+}
+.body-apr p {
+  margin: 0px;
+  margin-top: 10px;
 }

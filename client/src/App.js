@@ -10,6 +10,12 @@ const data1 = {
   no: '2010-16-ABC-09'
 }
 
+const data2 = {
+  isArchived : false,
+  classification: "U/FOUO",
+  no: '2010-16-ABC-09'
+}
+
 class App extends React.Component{
   constructor (props) {
     super(props);
@@ -20,6 +26,12 @@ class App extends React.Component{
       <>
         <APR 
           data = {data1}
+        />
+        <APR 
+          data = {data2}
+        />
+        <APR 
+          data = {data2}
         />
       </>
     )
