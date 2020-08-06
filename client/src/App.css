@@ -10,3 +10,11 @@ body {
   border-radius: 3px;
   overflow: hidden;
 }
+
+.topbar-apr {
+  background-color: #fefced;
+  height: 30px;
+  margin: 0px;
+  padding: 5px;
+  width: calc(100% - 10px);
+}

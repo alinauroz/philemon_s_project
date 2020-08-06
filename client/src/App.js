@@ -4,6 +4,11 @@ import './App.css';
 
 import APR from './components/APR'
 
+const data1 = {
+  isArchived : true,
+  classification: "U"
+}
+
 class App extends React.Component{
   constructor (props) {
     super(props);
@@ -12,7 +17,9 @@ class App extends React.Component{
   render () {
     return (
       <>
-        <APR />
+        <APR 
+          data = {data1}
+        />
       </>
     )
   }
