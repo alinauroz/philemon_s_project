@@ -22,7 +22,7 @@ const authenticate = async (username, password) => {
     }
 }
 
-const register = async (data) => {
+const save = async (data) => {
     try {
         let user = new model.user(data);
         return user.save();
@@ -34,5 +34,5 @@ const register = async (data) => {
 
 module.exports = {
     authenticate,
-    register
+    save
 }

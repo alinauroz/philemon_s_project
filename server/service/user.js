@@ -19,11 +19,7 @@ const getToken = async (username, password) => {
     }
 }
 
-getToken("alinauroz", "123456").then(d => {
-    console.log(d)
-}).catch(err => {
-    console.log(err)
-})
+const register = 
 
 module.exports = {
     getToken
