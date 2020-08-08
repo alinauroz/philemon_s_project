@@ -26,7 +26,9 @@ class App extends React.Component{
     return (
       <>
         <SearchBar />
-        <Login />
+        <div style={{textAlign: "center"}}>
+          <Login />
+        </div>
         <APR 
           data = {data1}
         />

@@ -11,7 +11,8 @@ export default class Login extends React.Component {
 
     render () {
         return (
-            <div id = 'login-container'>
+            <div class = 'container'>
+                <h1>Log In</h1>
                 <input 
                     type = 'text'
                     placeholder = 'Username'
@@ -21,9 +22,9 @@ export default class Login extends React.Component {
                 />
                 <input 
                     type = 'password'
-                    placeholder = 'pass'
+                    placeholder = 'Password'
                     onChange = {this.onChange_}
-                    name="username"
+                    name="pass"
                     className = "basic-input"
                 />
                 <input
