@@ -11,7 +11,7 @@ const authenticate = async (username, password) => {
             password
         })
         if (user.length < 1) {
-            throw "Invalid username or password"
+            return false;
         }
         else {
             return true;
@@ -22,6 +22,17 @@ const authenticate = async (username, password) => {
     }
 }
 
+const register = async (data) => {
+    try {
+        let user = new model.user(data);
+        return user.save();
+    }
+    catch (err) {
+        throw err;
+    }
+}
+
 module.exports = {
-    authenticate
+    authenticate,
+    register
 }
