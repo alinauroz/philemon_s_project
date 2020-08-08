@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import SearchBar from './components/SearchBar'
+import Login from './components/Login'
 import APR from './components/APR'
 
 const data1 = {
@@ -24,6 +26,8 @@ class App extends React.Component{
   render () {
     return (
       <>
+        <SearchBar />
+        <Login />
         <APR 
           data = {data1}
         />

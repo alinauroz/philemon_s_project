@@ -47,3 +47,19 @@ body {
   margin: 0px;
   margin-top: 10px;
 }
+
+.searchbar {
+  height: 30px;
+  padding: 5px;
+  background-color: #403e3f;
+  border-radius: 20px;
+}
+
+.search-input {
+  width: 200px;
+  height: 28px;
+  border-radius: 20px;
+  border: 0px;
+  font-weight: bold;
+  margin: 0px;
+}
