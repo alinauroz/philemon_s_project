@@ -19,8 +19,21 @@ const getToken = async (username, password) => {
     }
 }
 
-const register = 
+const register = async (data) => {
+    try {
+        if (data.username && data.email && data.password && data.name) {
+            return await integration.user.save(data)
+        }
+        else {
+            throw "Incomplete Input"
+        }
+    }
+    catch (err) {
+        throw err;
+    }
+}
 
 module.exports = {
-    getToken
+    getToken,
+    register
 }
