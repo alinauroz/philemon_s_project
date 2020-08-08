@@ -17,6 +17,20 @@ export default class Login extends React.Component {
                     placeholder = 'Username'
                     onChange = {this.onChange_}
                     name="username"
+                    className = "basic-input"
+                />
+                <input 
+                    type = 'password'
+                    placeholder = 'pass'
+                    onChange = {this.onChange_}
+                    name="username"
+                    className = "basic-input"
+                />
+                <input
+                    type = 'submit'
+                    value = 'Log In'
+                    onClick = {""}
+                    className = "green-button right"
                 />
             </div>
         )
