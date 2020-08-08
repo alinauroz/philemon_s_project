@@ -6,7 +6,7 @@ export default class Login extends React.Component {
     }
 
     onChange_ = (e) => {
-        alert(e.target.name)
+        this.setState({[e.target.name] : e.target.value})
     }
 
     render () {
@@ -16,6 +16,7 @@ export default class Login extends React.Component {
                     type = 'text'
                     placeholder = 'Username'
                     onChange = {this.onChange_}
+                    name="username"
                 />
             </div>
         )
