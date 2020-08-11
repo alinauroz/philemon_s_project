@@ -47,3 +47,58 @@ body {
   margin: 0px;
   margin-top: 10px;
 }
+
+.searchbar {
+  height: 30px;
+  padding: 5px;
+  background-color: #403e3f;
+  border-radius: 20px;
+}
+
+.search-input {
+  width: 200px;
+  height: 28px;
+  border-radius: 20px;
+  border: 0px;
+  font-weight: bold;
+  margin: 0px;
+}
+
+#login-container {
+  width: 250px;
+  height: 200px;
+  padding: 10px;
+  border: 1px solid #ebebeb;
+}
+
+.basic-input {
+  width: calc(100% - 30px);
+  margin: 5px;
+  padding: 5px 10px;
+  margin-bottom: 0px;
+  border: 1px solid #ebebeb;
+  height: 25px;
+  border-radius: 3px;
+}
+
+.right {
+  float: right;
+}
+
+.green-button {
+    background-color: #4bc24a;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 8px;
+    margin-top: 3px;
+    border-radius: 2px;
+    border: 0px;
+    margin-right: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.green-button:hover {
+  background-color: #0bc24a;
+}
