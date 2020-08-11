@@ -1,4 +1,5 @@
-const csv=require('csvtojson')
+const csv=require('csvtojson');
+const format = require("../utils/format")
 
 const getJSON = async filepath => {
     try {
@@ -12,9 +13,11 @@ const getJSON = async filepath => {
 }
 
 getJSON(__dirname + "/../uploads/a.csv").then(d => {
-    let a = d.data[0];
-    s = 0;
-    for (x in a) console.log(++s + " " + x + "\r\n------------")
+    let row = d.data[0];
+    for (x in row) {
+        let q = format.toProcessCase(x);
+        console.log('"' + q + '": { type: string},')
+    }
 })
 
 module.exports = {
