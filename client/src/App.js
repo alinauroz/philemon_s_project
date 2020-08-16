@@ -3,6 +3,7 @@ import './App.css';
 
 import SearchBar from './components/SearchBar'
 import Login from './components/Login'
+import Signup from './components/Signup'
 import APR from './components/APR'
 
 const data1 = {
@@ -20,24 +21,31 @@ const data2 = {
 class App extends React.Component{
   constructor (props) {
     super(props);
+    this.state = {
+      view: "home"
+    }
   }
 
   render () {
     return (
       <>
-        <SearchBar />
-        <div style={{textAlign: "center"}}>
+        
+        <div style={{textAlign: "center", display: this.state.view == "login" ? "block" : "none"}}>
+          <Signup />
           <Login />
         </div>
-        <APR 
-          data = {data1}
-        />
-        <APR 
-          data = {data2}
-        />
-        <APR 
-          data = {data2}
-        />
+        <div style={{display: this.state.view == "home" ? "block" : "none"}}>
+          <SearchBar />
+          <APR 
+            data = {data1}
+          />
+          <APR 
+            data = {data2}
+          />
+          <APR 
+            data = {data2}
+          />
+        </div>
       </>
     )
   }
