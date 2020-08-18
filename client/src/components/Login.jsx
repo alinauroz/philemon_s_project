@@ -5,6 +5,12 @@ export default class Login extends React.Component {
         super(props)
     }
 
+    login = () => {
+        let username = this.state.username;
+        let pass = this.state.pass;
+
+    }
+
     onChange_ = (e) => {
         this.setState({[e.target.name] : e.target.value})
     }
