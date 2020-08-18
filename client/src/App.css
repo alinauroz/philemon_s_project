@@ -149,7 +149,6 @@ input:focus {
   display: inline-block;
   width: 250px; 
   height: calc(100% - 10px);
-  background: grey;
   margin-top: 10px;
 }
 
