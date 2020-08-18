@@ -14,10 +14,7 @@ const getJSON = async filepath => {
 
 //getJSON(__dirname + "/../uploads/a.csv").then(d => {
 //    let row = d.data[0];
-//    for (x in row) {
-//        let q = format.toProcessCase(x);
-//        console.log('"' + q + '": { type: string},')
-//    }
+//    console.log(row);
 //})
 
 module.exports = {
