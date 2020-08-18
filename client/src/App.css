@@ -61,6 +61,18 @@ body {
   overflow: hidden;
   border-radius: 25px;
   background-color: white;
+  display: inline-block;
+}
+
+.search-new-form-button {
+  background-color: #625e5e;
+  height: 100%;
+  border: 0px;
+  color: white;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 0px 10px;
 }
 
 .search-input {
