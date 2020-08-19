@@ -34,10 +34,8 @@ class App extends React.Component{
 
   componentDidMount = async () => {
     try {
-      alert("Sent")
       let data = await fetch(API + 'APR');
       data = await data.json();
-      alert("Rec")
       this.setState({APRs : data});
     }
     catch (err) {
