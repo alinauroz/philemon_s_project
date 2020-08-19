@@ -7,6 +7,7 @@ import Signup from './components/Signup'
 import APR from './components/APR'
 import UserBar from './components/Userbar'
 import Filter from './components/Filter'
+import FilterViewer from './components/FilterViewer'
 
 const API = /localhost/.test(window.location) ? "http://localhost:3002/" : ""
 
@@ -28,7 +29,8 @@ class App extends React.Component{
     this.state = {
       view: "home",
       login_view: "su",
-      APRs: []
+      APRs: [],
+      filterList : ['Hello', 'World']
     }
   }
 
@@ -37,6 +39,15 @@ class App extends React.Component{
       let data = await fetch(API + 'APR');
       data = await data.json();
       this.setState({APRs : data});
+    }
+    catch (err) {
+      console.error(err)
+    }
+  }
+
+  search = async () => {
+    try {
+
     }
     catch (err) {
       console.error(err)
@@ -62,6 +73,9 @@ class App extends React.Component{
               </div>
             </div>
             <div style={{display: "inline-block", verticalAlign: "top", maxWidth: window.innerWidth - 300}}>
+              <FilterViewer 
+                list = {this.state.filterList}
+              />
               <APR 
                 data = {data1}
               />

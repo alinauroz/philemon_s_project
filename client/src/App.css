@@ -226,3 +226,17 @@ input:focus {
   vertical-align: top;
 }
 
+.filter-list {
+  margin: 10px;
+}
+
+.filter-list-item {
+  background-color: grey;
+  font-size: 12px;
+  background-color: #f3f3f3;
+  border: 1px solid #ebebeb;
+  padding: 3px;
+  border-radius: 2px;
+  margin-right: 5px;
+}
+
