@@ -7,7 +7,10 @@ export default class FilterCheckbox extends React.Component {
     render () {
         return (
         <div className = 'filter-elem'>
-            <input type = 'checkbox' />
+            <input 
+                type = 'checkbox' 
+                onClick = {() => this.props.toggleStore(this.props.key_, this.props.title)}
+            />
             <p className ='filter-elem-title'>{this.props.title}</p>
         </div>
     )
