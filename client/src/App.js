@@ -34,6 +34,16 @@ class App extends React.Component{
     }
   }
 
+  updateFilterStore = async store => {
+    let items = [];
+    for (let item in store) {
+      store[item].map(elem => {
+        items.push(items.push(elem));
+      });
+    }
+    this.setState({filterList: items});
+  }
+
   componentDidMount = async () => {
     try {
       let data = await fetch(API + 'APR');
