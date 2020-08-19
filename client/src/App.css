@@ -179,3 +179,50 @@ input:focus {
   border-left: 1px solid lightgrey;
   padding-left: 10px;
 }
+
+.left-bar-con {
+  width: 100%;
+  min-height: 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.left-bar-top {
+  background-color: #e8e6d7;
+  font-size: 11px;
+  width: calc(100% - 10px);
+  padding: 5px;
+  font-weight: bold;
+}
+
+.filter-unit {
+  
+}
+
+.filter-unit-title {
+  width: calc(100% - 10px);
+  color: #a95f66;
+  font-weight: bold;
+  font-size: 11px;
+  margin: 5px 0px;
+  padding: 5px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.filter-elem {
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+.filter-elem p {
+  margin: 0px;
+}
+
+.filter-elem-title {
+  font-size: 11px;
+  margin: 10px 5px;
+  display: inline-block;
+  vertical-align: top;
+}
+
