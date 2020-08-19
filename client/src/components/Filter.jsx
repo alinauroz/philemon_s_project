@@ -18,7 +18,7 @@ export default class Filter extends React.Component {
         else {
             this.state.store[key] = [value];
         }
-        console.log(this.state.store)
+        
     }
 
     render () {

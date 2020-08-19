@@ -9,8 +9,8 @@ export default class APR extends React.Component {
         return (
             <div className = 'container'>
                 <div className = 'topbar-apr' style = { this.props.data.isArchived ?  {}  : {backgroundColor: "white"}}>
-                    <span className = 'apr-classification-container'>{this.props.data.classification}</span>
-                    <span className = 'apr-no'>APR # - {this.props.data.no}</span>
+                    <span className = 'apr-classification-container'>{this.props.data.DOCUMENT_CLASSIFICATION}</span>
+                    <span className = 'apr-no'>APR # - {this.props.data.APR_REQ_NUM}</span>
                 </div>
                 <div className = 'body-apr'>
                     <p>

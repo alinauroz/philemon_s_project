@@ -8,16 +8,18 @@ import APR from './components/APR'
 import UserBar from './components/Userbar'
 import Filter from './components/Filter'
 
+const API = /localhost/.test(window.location) ? "http://localhost:3002/" : ""
+
 const data1 = {
   isArchived : true,
-  classification: "U",
-  no: '2010-16-ABC-09'
+  DOCUMENT_CLASSIFICATION: "U",
+  APR_REQ_NUM: '2010-16-ABC-09'
 }
 
 const data2 = {
   isArchived : false,
-  classification: "U/FOUO",
-  no: '2010-16-ABC-09'
+  DOCUMENT_CLASSIFICATION: "U/FOUO",
+  APR_REQ_NUM: '2010-16-ABC-09'
 }
 
 class App extends React.Component{
@@ -26,6 +28,20 @@ class App extends React.Component{
     this.state = {
       view: "home",
       login_view: "su",
+      APRs: []
+    }
+  }
+
+  componentDidMount = async () => {
+    try {
+      alert("Sent")
+      let data = await fetch(API + 'APR');
+      data = await data.json();
+      alert("Rec")
+      this.setState({APRs : data});
+    }
+    catch (err) {
+      console.error(err)
     }
   }
 
@@ -51,39 +67,15 @@ class App extends React.Component{
               <APR 
                 data = {data1}
               />
-              <APR 
-                data = {data2}
-              />
-              <APR 
-                data = {data2}
-              />
-              <APR 
-                data = {data1}
-              />
-              <APR 
-                data = {data2}
-              />
-              <APR 
-                data = {data2}
-              />
-              <APR 
-                data = {data1}
-              />
-              <APR 
-                data = {data2}
-              />
-              <APR 
-                data = {data2}
-              />
-              <APR 
-                data = {data1}
-              />
-              <APR 
-                data = {data2}
-              />
-              <APR 
-                data = {data2}
-              />
+              {
+                this.state.APRs.map(APR_ => {
+                    return (
+                      <APR
+                        data = {APR_}
+                      />
+                    );
+                })
+              }
             </div>
           </div>
         </div>
