@@ -46,9 +46,9 @@ loadFile = async path_ => {
     }
 }
 
-loadFile(__dirname + "/../uploads/a.csv").then(d => {
-    saveMany(d)
-})
+//loadFile(__dirname + "/../uploads/a.csv").then(d => {
+//    saveMany(d)
+//})
 
 const saveMany = async data => {
     try {
@@ -59,8 +59,19 @@ const saveMany = async data => {
     }
 }
 
+const search = async params => {
+    try {
+        return await APRModel.find(params);
+    }
+    catch (err) {
+        console.log(err);
+        throw err;
+    }
+}
+
 module.exports = {
     saveOne,
     saveMany,
-    loadFile
+    loadFile,
+    search
 }
