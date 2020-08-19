@@ -38,10 +38,11 @@ class App extends React.Component{
     let items = [];
     for (let item in store) {
       store[item].map(elem => {
-        items.push(items.push(elem));
+        items.push(elem)
       });
     }
-    this.setState({filterList: items});
+    await this.setState({filterList: items});
+    console.log(this.state.filterList)
   }
 
   componentDidMount = async () => {
@@ -79,7 +80,9 @@ class App extends React.Component{
           <div>
             <div style = {{display: "inline-block", width: 250, height: 500, height: window.innerHeight - 120}} className = "filter-con">
               <div className = "filters">
-                <Filter />
+                <Filter 
+                  onFiltersUpdate = {this.updateFilterStore}
+                />
               </div>
             </div>
             <div style={{display: "inline-block", verticalAlign: "top", maxWidth: window.innerWidth - 300}}>
