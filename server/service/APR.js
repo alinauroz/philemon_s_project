@@ -24,7 +24,7 @@ const search = async params => {
     }
 }
 
-const save = async file => {
+const saveMany = async file => {
     try {
         let obj = await integrations.APR.loadFile(file);
         return integrations.APR.saveMany(obg);
@@ -36,5 +36,6 @@ const save = async file => {
 
 module.exports = {
     getAll,
-    search
+    search,
+    saveMany
 }
