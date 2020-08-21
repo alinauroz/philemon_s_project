@@ -11,6 +11,16 @@ const getAll = async () => {
     }
 }
 
+const search = async searchString => {
+    try {
+        //return 
+    }
+    catch (err) {
+        throw err;
+    }
+}
+
 module.exports = {
-    getAll
+    getAll,
+    search
 }
