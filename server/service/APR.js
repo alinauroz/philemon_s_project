@@ -11,9 +11,9 @@ const getAll = async () => {
     }
 }
 
-const search = async searchString => {
+const search = async params => {
     try {
-        //return 
+        return integrations.APR.search(params);
     }
     catch (err) {
         throw err;
