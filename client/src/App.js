@@ -8,6 +8,7 @@ import APR from './components/APR'
 import UserBar from './components/Userbar'
 import Filter from './components/Filter'
 import FilterViewer from './components/FilterViewer'
+import Form from './components/Form'
 
 const API = /localhost/.test(window.location) ? "http://localhost:3002/" : ""
 
@@ -77,6 +78,7 @@ class App extends React.Component{
         <div style={{display: this.state.view === "home" ? "block" : "none"}}>
           <UserBar />
           <SearchBar />
+          <div style={{display: this.state.mainView}}>
           <div>
             <div style = {{display: "inline-block", width: 250, height: 500, height: window.innerHeight - 120}} className = "filter-con">
               <div className = "filters">
@@ -102,6 +104,10 @@ class App extends React.Component{
                 })
               }
             </div>
+          </div>
+          </div>
+          <div style={{display: this.state.newFormDisplay}}>
+              <Form />
           </div>
         </div>
       </>
