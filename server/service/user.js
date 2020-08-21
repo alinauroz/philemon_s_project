@@ -1,6 +1,6 @@
 const integration = {}
 
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
 
 integration.user = require("../integration/user")
 

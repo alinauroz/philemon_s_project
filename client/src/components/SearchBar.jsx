@@ -20,6 +20,9 @@ export default class SearchBar extends React.Component {
                         <img src = {this.state.icon} style={{width: 18, marginTop: 2}} />
                     </button>
                 </div>
+                <div style={{float: "right", display: "inline-block", verticalAlign: "top", height: 28}}>
+                    <input type = 'button' value = 'New Form' className = "search-new-form-button" />
+                </div>
             </div>
         )
     }

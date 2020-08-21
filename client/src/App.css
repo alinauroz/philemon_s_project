@@ -61,6 +61,18 @@ body {
   overflow: hidden;
   border-radius: 25px;
   background-color: white;
+  display: inline-block;
+}
+
+.search-new-form-button {
+  background-color: #625e5e;
+  height: 100%;
+  border: 0px;
+  color: white;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 0px 10px;
 }
 
 .search-input {
@@ -137,7 +149,6 @@ input:focus {
   display: inline-block;
   width: 250px; 
   height: calc(100% - 10px);
-  background: grey;
   margin-top: 10px;
 }
 
@@ -168,3 +179,64 @@ input:focus {
   border-left: 1px solid lightgrey;
   padding-left: 10px;
 }
+
+.left-bar-con {
+  width: 100%;
+  min-height: 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.left-bar-top {
+  background-color: #e8e6d7;
+  font-size: 11px;
+  width: calc(100% - 10px);
+  padding: 5px;
+  font-weight: bold;
+}
+
+.filter-unit {
+  
+}
+
+.filter-unit-title {
+  width: calc(100% - 10px);
+  color: #a95f66;
+  font-weight: bold;
+  font-size: 11px;
+  margin: 5px 0px;
+  padding: 5px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.filter-elem {
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+.filter-elem p {
+  margin: 0px;
+}
+
+.filter-elem-title {
+  font-size: 11px;
+  margin: 10px 5px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.filter-list {
+  margin: 10px;
+}
+
+.filter-list-item {
+  background-color: grey;
+  font-size: 12px;
+  background-color: #f3f3f3;
+  border: 1px solid #ebebeb;
+  padding: 3px;
+  border-radius: 2px;
+  margin-right: 5px;
+}
+
