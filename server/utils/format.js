@@ -7,6 +7,20 @@ const toProcessCase = str => {
     return str;
 }
 
+const toSearchObject = str => {
+    try {
+        obj = JSON.parse(str);
+        for (x in obj) {
+            obj[x] = {$in: obj[x]}
+        }
+        return obj;
+    }
+    catch (err) {
+        throw err;
+    }
+}
+
 module.exports = {
-    toProcessCase
+    toProcessCase,
+    toSearchObject
 }
