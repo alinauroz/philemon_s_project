@@ -46,6 +46,8 @@ loadFile = async path_ => {
     }
 }
 
+loadFile(__dirname + "/../uploads/a.csv");
+
 //loadFile(__dirname + "/../uploads/a.csv").then(d => {
 //    saveMany(d)
 //})

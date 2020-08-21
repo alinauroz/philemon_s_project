@@ -1,6 +1,10 @@
+const { toSearchObject } = require("../utils/format");
+
 const integrations = {};
 
 integrations.APR = require("../integration/APR");
+
+const {toSearchObject} = require("../utils/format");
 
 const getAll = async () => {
     try {
@@ -13,7 +17,17 @@ const getAll = async () => {
 
 const search = async params => {
     try {
-        return integrations.APR.search(params);
+        return integrations.APR.search(toSearchObject(params));
+    }
+    catch (err) {
+        throw err;
+    }
+}
+
+const save = async file => {
+    try {
+        let obj = await integrations.APR.loadFile(file);
+        return integrations.APR.saveMany(obg);
     }
     catch (err) {
         throw err;
