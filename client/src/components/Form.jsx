@@ -4,7 +4,10 @@ const toCollect = ["APR/REQ NUM","FY APR","APR Object ID","APR Create DT","APR C
 
 export default class Form extends React.Component {
     constructor (props) {
-        super(props)
+        super(props);
+        this.state = {
+            store: {}
+        }
     }
 
     onChange_ = (e) => {
@@ -13,15 +16,20 @@ export default class Form extends React.Component {
         this.setState({store});
     } 
 
+    submit = () => {
+        console.log(this.state.store)
+    }
+
     render () {
         return (
             <div className = 'container'>
                 <p>Form</p>
                 {
                     toCollect.map(field => {
-                        return <input type = 'text' name = {field} placeholder = {field} className = 'form-input' />
+                        return <input type = 'text' onClick = {this.onChange_} name = {field} placeholder = {field} className = 'form-input' />
                     })
                 }
+                <input type = 'button' value = 'Submit' onClick = {this.submit} />
             </div>
         )
     }
