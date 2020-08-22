@@ -27,10 +27,11 @@ Router.get("/search", async (req, res) => {
 Router.post("/", async (req, res) => {
     try {
         let data = req.body.data;
-        res.send(data);
+        await service.APR.saveOne(data);
+        return {msg: "added new APR"}
     }
     catch (err) {
-
+        res.send({err});
     }
 })
 
