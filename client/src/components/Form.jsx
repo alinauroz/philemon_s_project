@@ -6,6 +6,13 @@ export default class Form extends React.Component {
     constructor (props) {
         super(props)
     }
+
+    onChange_ = (e) => {
+        let store = this.state.store;
+        store[e.target.name] = e.target.value;
+        this.setState({store});
+    } 
+
     render () {
         return (
             <div className = 'container'>
