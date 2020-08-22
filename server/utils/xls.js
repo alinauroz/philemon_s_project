@@ -12,10 +12,10 @@ const getJSON = async filepath => {
     }
 }
 
-getJSON(__dirname + "/../uploads/a.csv").then(d => {
-    let row = d.data;
-    console.log(row);
-})
+//getJSON(__dirname + "/../uploads/a.csv").then(d => {
+//    let row = d.data;
+//    console.log(row);
+//})
 
 module.exports = {
     getJSON

@@ -68,7 +68,6 @@ class App extends React.Component{
   }
 
   setNewForm = async () => {
-    alert(2)
     this.setState({
       newFormView: "block",
       mainView: "none"
@@ -87,7 +86,7 @@ class App extends React.Component{
         <div style={{display: this.state.view === "home" ? "block" : "none"}}>
           <UserBar />
           <SearchBar 
-            formView = {this.formView}
+            formView = {this.setNewForm}
           />
           <div style={{display: this.state.mainView}}>
           <div>
