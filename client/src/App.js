@@ -31,7 +31,8 @@ class App extends React.Component{
       view: "home",
       login_view: "su",
       APRs: [],
-      filterList : ['Hello', 'World']
+      filterList : ['Hello', 'World'],
+      newFormView: "none"
     }
   }
 
@@ -66,6 +67,14 @@ class App extends React.Component{
     }
   }
 
+  setNewForm = async () => {
+    alert(2)
+    this.setState({
+      newFormView: "block",
+      mainView: "none"
+    })
+  }
+
   render () {
     return (
       <>
@@ -77,7 +86,9 @@ class App extends React.Component{
         </div>
         <div style={{display: this.state.view === "home" ? "block" : "none"}}>
           <UserBar />
-          <SearchBar />
+          <SearchBar 
+            formView = {this.formView}
+          />
           <div style={{display: this.state.mainView}}>
           <div>
             <div style = {{display: "inline-block", width: 250, height: 500, height: window.innerHeight - 120}} className = "filter-con">
@@ -106,7 +117,7 @@ class App extends React.Component{
             </div>
           </div>
           </div>
-          <div style={{display: this.state.newFormDisplay}}>
+          <div style={{display: this.state.newFormView}}>
               <Form />
           </div>
         </div>

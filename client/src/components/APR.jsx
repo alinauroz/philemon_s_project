@@ -14,10 +14,10 @@ export default class APR extends React.Component {
                 </div>
                 <div className = 'body-apr'>
                     <p>
-                        <b>Released to routing: </b>2016-10-12 <br />
+                        <b>Released to routing: </b>{this.props.data.APR_RELEASED_TO_ROUTING} <br />
                     </p>
                     <p>
-                        <b>Requisitioner: </b>Kent, Clark
+                        <b>Requisitioner: </b>{this.props.data.REQUISITIONER}
                     </p>
                     <p>
                         <b>Assigned To: </b> Tester 10 <br />
@@ -26,10 +26,10 @@ export default class APR extends React.Component {
                         <b>Company: </b>Get Company from props
                     </p>
                     <p>
-                        <b>IT acquisation type: </b> Service
+                        <b>IT acquisation type: </b> {this.props.data.REC_AWARD_ACTION_TYPE}
                     </p>
                     <p>
-                        <b>Description: </b> Applications Sustainment
+                        <b>Description: </b> {this.props.data.PRODUCT_DESC}
                     </p>
                 </div>
             </div>
