@@ -241,7 +241,20 @@ input:focus {
 }
 
 .form-input {
-  width: calc(100% - 20px);
+  width: calc(100% - 30px);
   margin: 2px 5px;
+  height: 30px;
+  padding: 5px;
 }
 
+.save-apr-button {
+  background-color: #4bc24a;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 5px;
+  margin-top: 3px;
+  border-radius: 2px;
+  margin: 5px 10px;
+  border: 0px;
+}

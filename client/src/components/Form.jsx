@@ -19,13 +19,20 @@ export default class Form extends React.Component {
     } 
 
     submit = () => {
-        return await fetch (API + "APR", {
-            method : "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body : JSON.stringify(this.state.store);
-        })
+        try {
+            alert("Saving ...")
+            await fetch (API + "APR", {
+                method : "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body : JSON.stringify(this.state.store)
+            })
+            alert("Saved")
+        }
+        catch (err) {
+            alert("Some error")
+        }
     }
 
     render () {
@@ -37,7 +44,7 @@ export default class Form extends React.Component {
                         return <input type = 'text' onChange = {this.onChange_} name = {toProcessCase(field)} placeholder = {field} className = 'form-input' />
                     })
                 }
-                <input type = 'button' value = 'Submit' onClick = {this.submit} />
+                <input type = 'button' value = 'Submit' onClick = {this.submit} className = "save-apr-button" />
             </div>
         )
     }
