@@ -17,7 +17,8 @@ const uri = "mongodb+srv://admin:abcd1234@cluster0-9zuvz.mongodb.net/yabie?retry
 
 const saveOne = async data => {
     try {
-
+        let APR_ = new APRModel(data);
+        return APR_.save();
     }
     catch (err) {
         throw err;

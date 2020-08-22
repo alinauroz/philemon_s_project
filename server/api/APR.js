@@ -24,4 +24,14 @@ Router.get("/search", async (req, res) => {
     }
 });
 
+Router.post("/", async (req, res) => {
+    try {
+        let data = req.body.data;
+        res.send(data);
+    }
+    catch (err) {
+
+    }
+})
+
 module.exports = Router;
