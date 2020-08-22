@@ -33,6 +33,16 @@ Router.post("/", async (req, res) => {
     catch (err) {
         res.send({err});
     }
+});
+
+Router.post("/file", async (req, res) => {
+    try {
+        await service.APR.saveMany(__dirname + "/../uploads/a.csv");
+        res.send({msg: "Loaded CSV file into DB"})
+    }
+    catch (err) {
+        res.send({err})
+    }
 })
 
 module.exports = Router;

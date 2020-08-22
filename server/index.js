@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 const express = require('express');
-const bodeParser = require('body-parser');
+const bodyParser = require('body-parser');
 
 const APRRouter = require("./api/APR");
 
