@@ -37,13 +37,14 @@ export default class Form extends React.Component {
 
     render () {
         return (
-            <div className = 'container'>
+            <div className = 'container' style = {{width: 600}}>
                 <p>Form</p>
                 {
                     toCollect.map(field => {
                         return <input type = 'text' onChange = {this.onChange_} name = {toProcessCase(field)} placeholder = {field} className = 'form-input' />
                     })
                 }
+                <input type = 'text' onChange = {this.onChange_} name = "assigned-to" placeholder = "Assigned To" className = 'form-input' />
                 <input type = 'button' value = 'Submit' onClick = {this.submit} className = "save-apr-button" />
             </div>
         )

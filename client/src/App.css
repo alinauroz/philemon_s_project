@@ -241,7 +241,7 @@ input:focus {
 }
 
 .form-input {
-  width: calc(100% - 30px);
+  width: calc(50% - 30px);
   margin: 2px 5px;
   height: 30px;
   padding: 5px;

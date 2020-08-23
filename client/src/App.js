@@ -74,6 +74,13 @@ class App extends React.Component{
     })
   }
 
+  hideNewForm = async () => {
+    this.setState({
+      newFormView: "none",
+      mainView: "block"
+    })
+  }
+
   render () {
     return (
       <>
@@ -87,6 +94,7 @@ class App extends React.Component{
           <UserBar />
           <SearchBar 
             formView = {this.setNewForm}
+            formHide = {this.hideNewForm}
           />
           <div style={{display: this.state.mainView}}>
           <div>
@@ -117,6 +125,8 @@ class App extends React.Component{
           </div>
           </div>
           <div style={{display: this.state.newFormView}}>
+              <input type = 'button' value = 'Back' onClick = {this.hideNewForm} />
+              <br />
               <Form />
           </div>
         </div>
