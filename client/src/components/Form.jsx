@@ -18,7 +18,7 @@ export default class Form extends React.Component {
         this.setState({store});
     } 
 
-    submit = () => {
+    submit = async () => {
         try {
             alert("Saving ...")
             await fetch (API + "APR", {

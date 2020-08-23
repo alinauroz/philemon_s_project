@@ -3,11 +3,35 @@ import React from 'react'
 export default class APR extends React.Component {
     constructor (props) {
         super(props);
+        this.state = {
+            detailView: "none"
+        }
+    }
+
+    onClick_ = async () => {
+        this.setState({detailView: "block"})
+    }
+
+    getDetails = () => {
+        let a = []
+        for (let x in this.props.data) {
+            a.push( <p><b>{x}</b>: {this.props.data[x]}</p>);
+        }
+        return a;
     }
 
     render () {
         return (
-            <div className = 'container'>
+            <>
+            <div className = 'apr-detail-container' style={{display: this.state.detailView}}>
+                <input type = 'button' onClick = {() => {this.setState({detailView:"none"})}} value = 'Hide' />
+                <div className = 'apr-detail'>
+                    {
+                        this.getDetails()
+                    }
+                </div>
+            </div>
+            <div className = 'container' onClick = {this.onClick_}>
                 <div className = 'topbar-apr' style = { this.props.data.isArchived ?  {}  : {backgroundColor: "white"}}>
                     <span className = 'apr-classification-container'>{this.props.data.DOCUMENT_CLASSIFICATION}</span>
                     <span className = 'apr-no'>APR # - {this.props.data.APR_REQ_NUM}</span>
@@ -33,6 +57,7 @@ export default class APR extends React.Component {
                     </p>
                 </div>
             </div>
+            </>
         )
     }
 
