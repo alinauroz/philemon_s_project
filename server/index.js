@@ -4,6 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const APRRouter = require("./api/APR");
+const UserRouter = require("./api/user");
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/APR", APRRouter);
+app.use("/user", UserRouter);
 
 const uri = process.env.MONGODB_URI;
 mongoose.connect(uri);
