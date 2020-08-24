@@ -6,17 +6,16 @@ service.user = require("../service/user")
 
 const Router = express.Router();
 
-app.use(express.static("public"));
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+Router.use(express.static("public"));
+Router.use(bodyParser.urlencoded({ extended: false }))
+Router.use(bodyParser.json())
 
 
-app.use(function(req, res, next) {
+Router.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
-
 
 Router.post("/login", async (req, res) => {
     try {

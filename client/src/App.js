@@ -12,6 +12,8 @@ import Form from './components/Form'
 
 const API = /localhost/.test(window.location) ? "http://localhost:3002/" : ""
 
+const view = localStorage.getItem("token") ? "home" : "login"
+
 const data1 = {
   isArchived : true,
   DOCUMENT_CLASSIFICATION: "U",
@@ -28,7 +30,7 @@ class App extends React.Component{
   constructor (props) {
     super(props);
     this.state = {
-      view: "home",
+      view: view,
       login_view: "su",
       APRs: [],
       filterList : [],
