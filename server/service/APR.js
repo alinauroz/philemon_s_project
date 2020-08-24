@@ -15,18 +15,13 @@ const getAll = async () => {
 
 const search = async params => {
     try {
-        console.log(toSearchObject(params));
-        if (typeof params === "string") params = JSON.parse(params);
+        params = toSearchObject(params);
         return integrations.APR.search(params);
     }
     catch (err) {
         throw err;
     }
 }
-
-//search('{"TYPE_OF_IT_ACQUISITION": ["modification"]}').then(d => {
-//    console.log(d.length);
-//})
 
 const saveMany = async file => {
     try {
