@@ -177,6 +177,9 @@ const APRSchema = {
     },
     "OBLIGATED":{
        "type":"string"
+    },
+    "assigned-to" : {
+       "type": "string"
     }
 }
 

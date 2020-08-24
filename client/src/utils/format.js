@@ -9,8 +9,8 @@ const toProcessCase = str => {
 
 const toSearchObject = str => {
     try {
-        obj = JSON.parse(str);
-        for (x in obj) {
+        let obj = JSON.parse(str);
+        for (let x in obj) {
             obj[x] = {$in: obj[x]}
         }
         return obj;

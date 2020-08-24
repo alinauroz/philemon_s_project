@@ -21,7 +21,7 @@ export default class SearchBar extends React.Component {
                     </button>
                 </div>
                 <div style={{float: "right", display: "inline-block", verticalAlign: "top", height: 28}}>
-                    <input type = 'button' value = 'New Form' className = "search-new-form-button" />
+                    <input type = 'button' value = 'New Form' className = "search-new-form-button" onClick = {() => this.props.formView()} />
                 </div>
             </div>
         )

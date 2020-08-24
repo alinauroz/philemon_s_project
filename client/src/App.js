@@ -8,6 +8,7 @@ import APR from './components/APR'
 import UserBar from './components/Userbar'
 import Filter from './components/Filter'
 import FilterViewer from './components/FilterViewer'
+import Form from './components/Form'
 
 const API = /localhost/.test(window.location) ? "http://localhost:3002/" : ""
 
@@ -30,7 +31,8 @@ class App extends React.Component{
       view: "home",
       login_view: "su",
       APRs: [],
-      filterList : ['Hello', 'World']
+      filterList : ['Hello', 'World'],
+      newFormView: "none"
     }
   }
 
@@ -65,6 +67,20 @@ class App extends React.Component{
     }
   }
 
+  setNewForm = async () => {
+    this.setState({
+      newFormView: "block",
+      mainView: "none"
+    })
+  }
+
+  hideNewForm = async () => {
+    this.setState({
+      newFormView: "none",
+      mainView: "block"
+    })
+  }
+
   render () {
     return (
       <>
@@ -76,7 +92,11 @@ class App extends React.Component{
         </div>
         <div style={{display: this.state.view === "home" ? "block" : "none"}}>
           <UserBar />
-          <SearchBar />
+          <SearchBar 
+            formView = {this.setNewForm}
+            formHide = {this.hideNewForm}
+          />
+          <div style={{display: this.state.mainView}}>
           <div>
             <div style = {{display: "inline-block", width: 250, height: 500, height: window.innerHeight - 120}} className = "filter-con">
               <div className = "filters">
@@ -102,6 +122,12 @@ class App extends React.Component{
                 })
               }
             </div>
+          </div>
+          </div>
+          <div style={{display: this.state.newFormView}}>
+              <input type = 'button' value = 'Back' onClick = {this.hideNewForm} />
+              <br />
+              <Form />
           </div>
         </div>
       </>
