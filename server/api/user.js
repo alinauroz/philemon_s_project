@@ -21,4 +21,15 @@ Router.post("/login", async (req, res) => {
     }
 });
 
+Router.post("/signup", async (req, res) => {
+    try {
+        let data = req.body;
+        let res_ = await service.user.register(data);
+        return res.send({res_})
+    }
+    catch (err) {
+        res.send({err})
+    }
+})
+
 module.exports = Router;
