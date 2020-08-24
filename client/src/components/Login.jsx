@@ -8,6 +8,15 @@ export default class Login extends React.Component {
     }
 
     login = async () => {
+
+        /*
+            login function sends a post request to the API with username and password.
+            In response, the API sends user token in response if all is well otherwise
+            the API sends an error.
+            If token is received, this function saves the token value in localStorage and
+            reloads the page.
+        */
+
         try {
             let username = this.state.username;
             let password = this.state.pass;
@@ -18,16 +27,16 @@ export default class Login extends React.Component {
                 },
                 body : JSON.stringify({username, password})
             });
-            let res = d.json();
+            let res = await d.json();
 
-            if (res.err)
-                alert(`Error: ${res.err}`)
-            else {
+            if (res.token) {
                 window.localStorage.setItem(
                     'token', res.token
                 );
                 window.location.reload();
             }
+            else
+                alert("Error: " + res.err)
         }
         catch (err) {
             alert("Error: " + err)
