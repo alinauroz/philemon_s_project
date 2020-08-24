@@ -11,11 +11,11 @@ const getToken = async (username, password) => {
             return jwt.sign({username}, process.env.TOKEN_KEY);
         }
         else {
-            console.log(err)
             throw "Invalid username or password"
         }
     }
     catch (err) {
+        console.log(err)
         throw err;
     }
 }
