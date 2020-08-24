@@ -4,7 +4,7 @@ export default class Signup extends React.Component {
     constructor (props) {
         super(props)
         this.state = {
-
+            username: ""
         }
     }
 
@@ -22,8 +22,9 @@ export default class Signup extends React.Component {
 
     }
 
-    onChange_ = (e) => {
-        this.setState({[e.target.name] : e.target.value})
+    onChange_ = async (e) => {
+        await this.setState({[e.target.name] : e.target.value})
+        console.log(this.state)
     }
 
     setUsername = async (e) => {
@@ -48,9 +49,16 @@ export default class Signup extends React.Component {
             <div class = 'container'>
                 <h1>Sign Up</h1>
                 <input 
+                    type = 'text'
+                    placeholder = 'Name'
+                    onChange = {this.onChange_}
+                    name="name"
+                    className = "basic-input"
+                />
+                <input 
                     type = 'email'
                     placeholder = 'Email'
-                    onChange = {this.setUsername}
+                    onChange = {(e) => {this.setUsername(e); this.onChange_(e)}}
                     name="email"
                     className = "basic-input"
                 />
