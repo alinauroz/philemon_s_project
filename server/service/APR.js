@@ -42,6 +42,8 @@ const saveMany = async file => {
 //2. Applies toProcessFunction e.g hello/world to HELLOW_WORLD
 //3. it saves this object to mongodb
 
+//saveMany(__dirname + "/../uploads/a.csv")
+
 const saveOne = async data => {
     try {
         return integrations.APR.saveOne(data);
