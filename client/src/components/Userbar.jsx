@@ -21,7 +21,7 @@ export default class UserBar extends React.Component {
                     <div className = 'user-detail'>
                         <div style={{fontSize: 12, display: "inline-block", verticalAlign: "top", marginTop: 3, marginRight: 5}}>
                             {this.state.name}<br />
-                            Hello World
+                            <span style={{cursor: "pointer"}} onClick = {() => {localStorage.setItem("token", ""); window.location.reload()}}>Logout</span>
                         </div>
                         <div style={{display: "inline-block", width:35, height: 35, borderRadius: 30, backgroundImage: `url(${this.state.img})`, backgroundSize: "cover"}}>
                         
