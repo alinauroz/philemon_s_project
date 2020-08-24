@@ -1,7 +1,5 @@
 const e = require("express");
-
 const model = {}
-
 model.user = require("../models/user.mongo");
 
 const authenticate = async (username, password) => {

@@ -11,6 +11,7 @@ const getToken = async (username, password) => {
             return jwt.sign({username}, process.env.TOKEN_KEY);
         }
         else {
+            console.log(err)
             throw "Invalid username or password"
         }
     }
@@ -32,6 +33,12 @@ const register = async (data) => {
         throw err;
     }
 }
+
+//getToken("philemon", "123456").then(d => {
+//    console.log(d)
+//}).catch (err => {
+//    console.log("Problem")
+//})
 
 module.exports = {
     getToken,
