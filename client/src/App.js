@@ -31,7 +31,7 @@ class App extends React.Component{
       view: "home",
       login_view: "su",
       APRs: [],
-      filterList : ['Hello', 'World'],
+      filterList : [],
       newFormView: "none"
     }
   }
@@ -121,7 +121,7 @@ class App extends React.Component{
                     );
                 })
               }
-            </div>
+            </div> 
           </div>
           </div>
           <div style={{display: this.state.newFormView}}>
