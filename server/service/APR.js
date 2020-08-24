@@ -38,6 +38,10 @@ const saveMany = async file => {
     }
 }
 
+//1. loads data from csv
+//2. Applies toProcessFunction e.g hello/world to HELLOW_WORLD
+//3. it saves this object to mongodb
+
 const saveOne = async data => {
     try {
         return integrations.APR.saveOne(data);
@@ -46,8 +50,6 @@ const saveOne = async data => {
         throw err;
     }
 }
-
-//saveMany(__dirname + "/../uploads/a.csv");
 
 module.exports = {
     getAll,

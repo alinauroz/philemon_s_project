@@ -1,8 +1,12 @@
 const express = require('express');
 const service = {};
+const bodyParser = require('body-parser');
 service.APR = require("../service/APR");
 
 const Router = express.Router();
+
+Router.use(bodyParser.urlencoded({ extended: false }));
+Router.use(bodyParser.json());
 
 Router.get("/", async (req, res) => {
     try {
@@ -26,11 +30,12 @@ Router.get("/search", async (req, res) => {
 
 Router.post("/", async (req, res) => {
     try {
-        let data = req.body.data;
+        let data = req.body;
         await service.APR.saveOne(data);
-        return {msg: "added new APR"}
+        return res.send( {msg: "Saved"});
     }
     catch (err) {
+        console.log(err);
         res.send({err});
     }
 });

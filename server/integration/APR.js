@@ -2,8 +2,9 @@ const APRModel = require("../models/APR.mongo");
 const mongoose = require("mongoose");
 const format = require('../utils/format');
 const xls = require('../utils/xls');
+require('dotenv').config();
 
-const uri = "mongodb+srv://admin:abcd1234@cluster0-9zuvz.mongodb.net/yabie?retryWrites=true&w=majority";
+const uri = process.env.MONGODB_URI;
 
 (async function(){
 	try {
