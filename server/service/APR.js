@@ -25,7 +25,7 @@ const search = async params => {
 
 const saveMany = async file => {
     try {
-        let obj = await integrations.APR.loadFile(file);
+        let obj = await integrations.APR.loadFile(__dirname + "/../uploads/" + file);
         return integrations.APR.saveMany(obj);
     }
     catch (err) {
