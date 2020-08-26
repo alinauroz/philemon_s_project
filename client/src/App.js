@@ -83,6 +83,28 @@ class App extends React.Component{
     })
   }
 
+  uploadFile = async (e) => {
+    let file = e.target.files[0];
+    const fd = new FormData();
+    fd.append('csv', file);
+    console.log(file);
+    // send `POST` request
+    fetch('http://localhost:3002/APR/csv', {
+        method: 'POST',
+        body: fd
+    })
+    .then(res => res.json())
+    .then(json => {
+      if ('name' in json) {
+        alert("Uploaded")
+      }
+      else {
+        alert("Some error in uploading")
+      }
+    })
+    .catch(err => alert(err));
+  }
+
   render () {
     return (
       <>
@@ -132,7 +154,12 @@ class App extends React.Component{
           </div>
           </div>
           <div style={{display: this.state.newFormView}}>
+              <br />
               <input type = 'button' value = 'Back' onClick = {this.hideNewForm} />
+              <input 
+                type = 'file'
+                onChange = {this.uploadFile}
+              />
               <br />
               <Form />
           </div>
