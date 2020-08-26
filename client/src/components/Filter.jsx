@@ -117,6 +117,24 @@ export default class Filter extends React.Component {
                         key_ = "DOCUMENT_CLASSIFICATION"
                         toggleStore = {this.toggleStore}
                     />
+                    <p className = 'filter-unit-title'>
+                        APR Year
+                    </p>
+                    <FilterCheckbox 
+                        title = "2017"
+                        key_ = "FY_APR"
+                        toggleStore = {this.toggleStore}
+                    />
+                    <FilterCheckbox 
+                        title = "2018"
+                        key_ = "FY_APR"
+                        toggleStore = {this.toggleStore}
+                    />
+                    <FilterCheckbox 
+                        title = "2019"
+                        key_ = "FY_APR"
+                        toggleStore = {this.toggleStore}
+                    />
                 </div>
             </div>
         )

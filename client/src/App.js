@@ -50,7 +50,7 @@ class App extends React.Component{
   }
 
   updateFilterStore = async store => {
-
+    console.log(store)
     this.getAPRs(store)
 
     let items = [];
