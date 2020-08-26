@@ -38,7 +38,21 @@ class App extends React.Component{
     }
   }
 
+  getAPRs = async store => {
+    try {
+      let d = await fetch(API + "APR/search?q=" + JSON.stringify(store));
+      let APRs = await d.json();
+      this.setState({APRs})
+    }
+    catch (err) {
+      alert("Some error while gettings results")
+    }
+  }
+
   updateFilterStore = async store => {
+
+    this.getAPRs(store)
+
     let items = [];
     for (let item in store) {
       store[item].map(elem => {
