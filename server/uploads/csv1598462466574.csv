@@ -1,0 +1,22 @@
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+let stripe = Stripe('pk_test_kDYq9twVedQozpbUvTyLLsUk00ew0W7UrF');
+			let pro = {
+				name : "Hello",
+				amount : 100,
+				price : 120,
+			}
+			
+
+
+stripe.redirectToCheckout({
+				lineItems : [
+					{price : "100", quantity : 1}
+				],
+ mode : "payment",
+				successUrl : "http://google.com",
+cancelUrl : "http://dvsd.co"
+			}).then(d => {
+console.log(d)}).catch(err => {
+console.error(err)})
+<script>
