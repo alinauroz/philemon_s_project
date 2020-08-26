@@ -49,6 +49,17 @@ class App extends React.Component{
     }
   }
 
+  getById = async id => {
+    try {
+      let res = await fetch(API + 'APR/search?q={"APR_REQ_NUM": "'+id+'"}');
+      let APRs = await res.json();
+      this.setState({APRs});
+    }
+    catch (err) {
+      alert('Error while fetching the APR')
+    }
+  }
+
   updateFilterStore = async store => {
     console.log(store)
     this.getAPRs(store)
@@ -138,6 +149,7 @@ class App extends React.Component{
           <SearchBar 
             formView = {this.setNewForm}
             formHide = {this.hideNewForm}
+            getById = {this.getById}
           />
           <div style={{display: this.state.mainView}}>
           <div>
