@@ -42,6 +42,11 @@ export default class Filter extends React.Component {
                         toggleStore = {this.toggleStore}
                     />
                     <FilterCheckbox 
+                        title = "Unclassified"
+                        key_ = "DOCUMENT_CLASSIFICATION"
+                        toggleStore = {this.toggleStore}
+                    />
+                    <FilterCheckbox 
                         title = "S"
                         key_ = "DOCUMENT_CLASSIFICATION"
                         toggleStore = {this.toggleStore}
