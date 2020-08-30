@@ -1,5 +1,7 @@
 import React from 'react'
 
+const API = /localhost/.test(window.location) ? "http://localhost:3002/" : ""
+
 export default class APR extends React.Component {
     constructor (props) {
         super(props);
@@ -39,8 +41,22 @@ export default class APR extends React.Component {
         return a;
     }
 
-    update = () => {
-        
+    update = async () => {
+        try {
+            alert("Updating ...");
+            let d = await fetch (API + "APR/update", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(this.state.updated)
+            });
+            alert("Updated")
+        }
+        catch (err) {
+            console.error(err);
+            alert("Some error occurred. View console for more details")
+        }
     }
 
     render () {
