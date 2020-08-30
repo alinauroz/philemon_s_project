@@ -73,9 +73,19 @@ const search = async params => {
     }
 }
 
+const update = async (_id, newData) => {
+    try {
+        return APRModel.findOneAndUpdate({_id}, newData);
+    }
+    catch (err) {
+        throw err;
+    }
+}
+
 module.exports = {
     saveOne,
     saveMany,
     loadFile,
-    search
+    search,
+    update
 }
