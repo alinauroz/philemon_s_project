@@ -64,4 +64,17 @@ Router.post("/", async (req, res) => {
     }
 });
 
+Router.post("/update", async (req, res) => {
+    try {
+        let _id = req.body._id;
+        let newData = req.body;
+        let res_ = await service.APR.update(_id, newData);
+        res.send({res_});
+    }
+    catch (err) {
+        console.log(err);
+        res.send({err})
+    }
+})
+
 module.exports = Router;
