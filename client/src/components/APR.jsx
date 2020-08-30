@@ -39,6 +39,10 @@ export default class APR extends React.Component {
         return a;
     }
 
+    update = () => {
+        
+    }
+
     render () {
         return (
             <>
@@ -56,6 +60,7 @@ export default class APR extends React.Component {
                     {
                         this.getUpdateForm()
                     }
+                    <input type = 'button' value = 'Update' onClick = {this.update} className = "save-apr-button" />
                     </div>
                 </div>
             </div>
