@@ -5,7 +5,8 @@ export default class APR extends React.Component {
         super(props);
         this.state = {
             detailView: "none",
-            updateView: "none"
+            updateView: "none",
+            updated: {}
         }
     }
 
@@ -21,11 +22,20 @@ export default class APR extends React.Component {
         return a;
     }
 
+    setUpdateFormValues = (e) => {
+        let data = this.state.updated;
+        data[e.target.name] = e.target.value;
+        this.setState({updated: data})
+    }
+
+
     getUpdateForm = () => {
         let a = []
         for (let x in this.props.data) {
-            a.push( <><b>{x}:</b> <input type = 'text' value = {this.props.data[x]} name = {x} /><br/></> );
+            if (! this.state.firstTime) this.state.updated[x] = this.props.data[x];
+            a.push( <><b>{x}:</b> <input type = 'text' onChange = {this.setUpdateFormValues} value = {this.state.updated[x]} name = {x} /><br/></> );
         }
+        this.state.firstTime = true;
         return a;
     }
 
