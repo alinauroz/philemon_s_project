@@ -48,9 +48,19 @@ const saveOne = async data => {
     }
 }
 
+const update = async (_id, newData) => {
+    try {
+        return integrations.APR.update(_id, newData);
+    }
+    catch (err) {
+        throw err;
+    }
+}
+
 module.exports = {
     getAll,
     search,
     saveMany,
-    saveOne
+    saveOne,
+    update
 }
