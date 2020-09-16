@@ -145,7 +145,7 @@ input:focus {
   height: 100%;
 }
 
-.filter-con {
+.filter-con, .left-con {
   display: inline-block;
   width: 250px; 
   height: calc(100% - 10px);

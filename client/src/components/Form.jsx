@@ -37,7 +37,7 @@ export default class Form extends React.Component {
 
     render () {
         return (
-            <div className = 'container' style = {{width: 600}}>
+            <div className = 'container' style = {{width: 600, display: "inline-block"}}>
                 <p>Form</p>
                 {
                     toCollect.map(field => {

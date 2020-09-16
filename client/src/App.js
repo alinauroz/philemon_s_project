@@ -9,6 +9,7 @@ import UserBar from './components/Userbar'
 import Filter from './components/Filter'
 import FilterViewer from './components/FilterViewer'
 import Form from './components/Form'
+import UploadCSV from './components/UploadCSV'
 
 const API = /localhost/.test(window.location) ? "http://localhost:3002/" : ""
 
@@ -176,11 +177,11 @@ class App extends React.Component{
           <div style={{display: this.state.newFormView}}>
               <br />
               <input type = 'button' value = 'Back' onClick = {this.hideNewForm} />
-              <input 
+              <br />
+              <UploadCSV 
                 type = 'file'
                 onChange = {this.uploadFile}
               />
-              <br />
               <Form />
           </div>
         </div>
