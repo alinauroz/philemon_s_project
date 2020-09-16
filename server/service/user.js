@@ -23,14 +23,12 @@ const getToken = async (username, password) => {
 const getUserFromToken = async (token) => {
     let payload = jwt.verify(token, process.env.TOKEN_KEY);
     if (payload.username) {
-        
+        return integration.user.getUser(payload.username);
     }
     else {
         throw "Invalid token"
     }
 }
-
-getUserFromToken("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5hdXJvejk5IiwiaWF0IjoxNjAwMjY4MDY0fQ.bpzEbBt6qTql3oxh8Wd2PfpxnHlRvD17ni4kfKGdjRI")
 
 const register = async (data) => {
     try {
@@ -54,5 +52,6 @@ const register = async (data) => {
 
 module.exports = {
     getToken,
-    register
+    register,
+    getUserFromToken
 }

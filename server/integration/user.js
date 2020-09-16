@@ -20,7 +20,11 @@ const authenticate = async (username, password) => {
     }
 }
 
-
+const getUser = username => {
+    return model.user.find({
+        username
+    })
+}
 
 const save = async (data) => {
     try {
@@ -34,5 +38,6 @@ const save = async (data) => {
 
 module.exports = {
     authenticate,
-    save
+    save,
+    getUser
 }
