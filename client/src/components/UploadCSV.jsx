@@ -4,7 +4,8 @@ export default class extends React.Component {
     constructor (props) {
         super (props);
         this.state = {
-            duplicates: []
+            duplicates: [],
+            ingested: []
         }
     }
 
@@ -28,6 +29,20 @@ export default class extends React.Component {
           })
         })
         .catch(err => alert(err));
+    }
+
+    renderDuplicate () {
+        let i = 0;
+        let els = []
+        this.state.ingested.map(dup => {
+            if (i++ % 2 == 0) {
+                els.push(<p style = {{margin: 0,backgroundColor: '#f2f2f2', padding: 10, width: 'calc(100% - 20px)'}}>{dup}</p>);
+            }
+            else {
+                els.push(<p style = {{margin:0,padding: 10, width: 'calc(100% - 20px)'}}>{dup}</p>);
+            }
+        });
+        return els;
     }
 
     render () {
@@ -59,8 +74,11 @@ export default class extends React.Component {
                                         Ingested {this.state.total - this.state.duplicates.length} of {this.state.total} ATRs
                                         </div>
                                     </div>
-                                    <div style = {{height: "600px", marginTop: 10, marginLeft: 10, width:"calc(100% - 20px)"}}>
-                                        
+                                    <div style = {{fontSize: 13, height: "600px", marginTop: 10, marginLeft: 0, width:"calc(100% - 0px)"}}>
+                                        <p style = {{marginLeft: 10}}>Successfully Uploaded</p>
+                                        {
+                                            this.renderDuplicate()
+                                        }
                                     </div>
                                     </>
                                 ) : ""
