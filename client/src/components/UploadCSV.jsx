@@ -26,17 +26,22 @@ export default class extends React.Component {
 
     render () {
         return (
-            <div style={{display: 'inline-block'}}>
-            <div className = 'filter-con'>
-            <div className = 'left-bar-con'>
-                <div className = 'filter'>
-                    <input 
-                        type = 'file'
-                        onChange = {this.uploadFile}
-                    />
+            <div style={{display: 'inline-block', verticalAlign: 'top'}}>
+                <div className = 'filter-con'>
+                    <div className = 'left-bar-con'>
+                        <div className = 'left-bar-top'>
+                            Upload Cummulative APR Spreadsheet
+                        </div>
+                        <br />
+                        <div className = 'filter'>
+                            <input 
+                                type = 'file'
+                                onChange = {this.uploadFile}
+                                className = 'app-blue-button'
+                            />
+                        </div>
+                    </div>
                 </div>
-            </div>
-            </div>
             </div>
         )
     }

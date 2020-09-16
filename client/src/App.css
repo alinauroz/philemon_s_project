@@ -287,3 +287,16 @@ input:focus {
   font-weight: bold;
   cursor: pointer;
 }
+
+.app-blue-button {
+  background-color: #3585c1;
+  border: 0px;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  width: calc(100% - 20px);
+
+}
