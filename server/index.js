@@ -6,6 +6,7 @@ const cors = require('cors');
 
 const APRRouter = require("./api/APR");
 const UserRouter = require("./api/user");
+const CommentRouter = require("./api/Comment")
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use((req, res, next) => {
 
 app.use("/APR", APRRouter);
 app.use("/user", UserRouter);
+app.use("/comment", CommentRouter);
 
 const uri = process.env.MONGODB_URI;
 mongoose.connect(uri);
