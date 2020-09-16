@@ -6,7 +6,7 @@ const CommentSchema = {
     required: true,
   },
   User: {
-    type: Number,
+    type: String,
     required: true,
   },
   Comment: {
