@@ -137,8 +137,8 @@ class App extends React.Component{
         <div style={{textAlign: "center", display: this.state.view === "login" ? "block" : "none"}}>
           <br/>
           <center>
-            <input type = 'button' value = 'Login' onClick = {() => this.setState({login_view: "li"})} />
-            <input type = 'button' value = 'Sign Up' onClick = {() => this.setState({login_view: "su"})} />
+            <input type = 'button' class = 'button' value = 'Login' onClick = {() => this.setState({login_view: "li"})} />
+            <input type = 'button' class = 'button' value = 'Sign Up' onClick = {() => this.setState({login_view: "su"})} />
           </center>
           {
             this.state.login_view == "li" ? <Login /> : <Signup />

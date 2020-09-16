@@ -278,3 +278,12 @@ input:focus {
   padding: 10px;
   overflow: auto;
 }
+
+.button {
+  border: 0px;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+}
