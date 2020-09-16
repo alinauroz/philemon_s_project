@@ -60,6 +60,23 @@ export default class APR extends React.Component {
         }
     }
 
+    comment = async () => {
+        alert("Commenting ..")
+        let body = JSON.stringify({
+            comment: this.state.comment,
+            token: localStorage.getItem('token'),
+            APR_NUM: '1010-Z'
+        });
+        let d = await fetch (API + "comment/", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body
+        });
+        alert("Comment Saved")
+    }
+
     render () {
         return (
             <>
@@ -77,10 +94,10 @@ export default class APR extends React.Component {
                     </div>
                     <div style = {{display:this.state.commentBox}}>
                     {
-                        <textarea placeholder = 'Comment' style = {{width:"70%", margin: "10px 5px", padding: 10}}>{this.state.comment}</textarea>
+                        <textarea onChange = {(e) => {this.setState({comment: e.target.value})}} placeholder = 'Comment' style = {{width:"70%", margin: "10px 5px", padding: 10}}>{this.state.comment}</textarea>
                     }
                     <br />
-                    <input type = 'button' value = 'Comment' className = 'save-apr-button'/>
+                    <input type = 'button' value = 'Comment' className = 'save-apr-button' onClick = {this.comment}/>
                     </div>
                     <div style = {{display:this.state.updateView}}>
                     {
