@@ -23,7 +23,8 @@ export default class extends React.Component {
           this.setState({
               name: file.name,
               duplicates: json.duplicates,
-              total: 100
+              total: json.total,
+              ingested: json.ingested
           })
         })
         .catch(err => alert(err));
