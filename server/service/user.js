@@ -20,6 +20,10 @@ const getToken = async (username, password) => {
     }
 }
 
+const getUserFromToken = async (token) => {
+    
+}
+
 const register = async (data) => {
     try {
         if (data.username && data.email && data.password && data.name) {
