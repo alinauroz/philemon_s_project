@@ -11,7 +11,7 @@ Router.post("/", async (req, res) => {
 
 Router.get("/:APR_NUM", async (req, res) => {
     try {
-        let data = await service.comment.get(req.body.APR_NUM);
+        let data = await service.comment.get(req.params.APR_NUM);
         return res.send(data);
     }
     catch (err) {
