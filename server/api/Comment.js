@@ -6,7 +6,13 @@ service.user = require("../service/user");
 service.comment = require("../service/Comment")
 
 Router.post("/", async (req, res) => {
-
+    try {
+        let user = await service.user.getUserFromToken(req.body.token);
+        console.log(user)
+    }
+    catch (err) {
+        res.status(400).send({err})
+    }
 });
 
 Router.get("/:APR_NUM", async (req, res) => {
