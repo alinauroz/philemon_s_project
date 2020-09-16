@@ -56,20 +56,21 @@ loadFile = async path_ => {
 
 const saveMany = async data => {
     try {
-        let duplicate = [];
+        let duplicates = [];
+        let ingested = [];
         await Promise.all(data.map(async APR => {
             let d = await search({APR_REQ_NUM: APR.APR_REQ_NUM});
             if (d[0]) {
-                duplicate.push(APR.APR_REQ_NUM);
-                console.log("DUP")
+                duplicates.push(APR.APR_REQ_NUM);
             }
             else {
+                ingested.push(APR.APR_REQ_NUM);
                 let APR_ = new APRModel(APR);
                 await APR_.save();
             }
         }));
-        console.log("DUP->" + duplicate)
-        return {duplicate}
+        console.log("DUP->" + duplicates)
+        return {duplicates, ingested, total: data.length}
     }
     catch (err) {
         throw err;
