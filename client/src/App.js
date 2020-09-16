@@ -179,7 +179,6 @@ class App extends React.Component{
               <input type = 'button' value = 'Back' onClick = {this.hideNewForm} />
               <br />
               <UploadCSV 
-                type = 'file'
                 onChange = {this.uploadFile}
               />
               <Form />
