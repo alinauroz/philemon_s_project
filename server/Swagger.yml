@@ -32,7 +32,7 @@ paths:
       tags:
         - comment
       summary: Get comments of a APR
-      operationId: service.comment.save
+      operationId: service.comment.get
       parameters:
         - in: path
           name: APR_NUM
@@ -41,8 +41,29 @@ paths:
       responses:
         '200':
           description: An Array of comments is returned
+    post:
+      tags:
+        - comment
+      summary: Post a Comment
+      operationId: service.comment.save
+      parameters:
+        - in: body
+          name: APR_NUM
+          description: APR_REQ_NUM of the APR at which comment is posted
+          required: true
+        - in: body
+          name: Comment
+          description: The comment body
+          required: true
+        - in: body
+          name: token
+          description: JWT token of the person who did comment
+          required: true
+      responses:
+        '200':
+          description: An object containing message
 
-  /csv:
+  /APR/csv:
     post:
       tags:
         - APR
@@ -63,7 +84,7 @@ paths:
       responses:
         '200':
           description: Data Saved
-  /:
+  /APR/:
     get:
       tags:
         - APR
@@ -94,22 +115,18 @@ paths:
       parameters:
         - in: body
           name: body
-          description: Send a file containing APRs
+          description: Send an object with APR detail
           required: true
       responses:
         '200':
           description: Data Saved
-      security:
-        - petstore_auth:
-            - 'write:pets'
-            - 'read:pets'
-  /update:
+  /APR/update:
     post:
       tags:
         - APR
       summary: Update an existing pet
       description: ''
-      operationId: updatePet
+      operationId: update
       consumes:
         - application/json
         - application/xml
@@ -119,28 +136,19 @@ paths:
       parameters:
         - in: body
           name: body
-          description: Pet object that needs to be added to the store
+          description: Body should contain the updated data
           required: true
       responses:
-        '400':
-          description: Invalid ID supplied
-        '404':
-          description: Pet not found
-        '405':
-          description: Validation exception
-      security:
-        - petstore_auth:
-            - 'write:pets'
-            - 'read:pets'
-  /search:
+        '200':
+          description: An object containing message
+  /APR/search:
     get:
       tags:
         - APR
       summary: Search in APRs
       description: >-
-        Muliple tags can be provided with comma separated strings. Use        
-        tag1, tag2, tag3 for testing.
-      operationId: findPetsByTags
+        Send a object with filters
+      operationId: find
       produces:
         - application/xml
         - application/json
@@ -155,10 +163,8 @@ paths:
           collectionFormat: multi
       responses:
         '200':
-          description: successful operation
-        '400':
-          description: Invalid tag value
-  /login:
+          description: returns an array of APRs
+  /user/login:
     post:
       tags:
         - user
@@ -179,7 +185,7 @@ paths:
       responses:
         '200':
           description: successful operation
-  /user:
+  /user/:
     post:
       tags:
         - user
@@ -197,7 +203,6 @@ paths:
       responses:
         default:
           description: successful operation
-securityDefinitions:
   
 definitions:
   Order:
