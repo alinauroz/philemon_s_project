@@ -65,8 +65,8 @@ export default class APR extends React.Component {
             <div className = 'apr-detail-container' style={{display: this.state.detailView}}>
                 <input type = 'button' onClick = {() => {this.setState({detailView:"none"})}} value = 'Hide' />
                 <div className = 'apr-detail'>
-                    <input type = 'button' value = 'View Details' onClick = {() => {this.setState({detailsView_: "block", updateView: "none"})}} />
-                    <input type = 'button' value = 'View Update Form' onClick = {() => {this.setState({detailsView_: "none", updateView: "block"})}} />
+                    <input class = 'button'type = 'button' value = 'View Details' onClick = {() => {this.setState({detailsView_: "block", updateView: "none"})}} />
+                    <input class = 'button' type = 'button' value = 'View Update Form' onClick = {() => {this.setState({detailsView_: "none", updateView: "block"})}} />
                     <div style = {{display:this.state.detailsView_}}>
                     {
                         this.getDetails()

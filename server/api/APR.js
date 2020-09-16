@@ -24,7 +24,7 @@ Router.use(bodyParser.json());
 Router.post("/csv", upload.single('csv'), async (req, res) => {
     try {
         let d = await service.APR.saveMany(req.filename);
-        res.send({name: req.filename});
+        res.send(d);
     }
     catch (err) {
         res.send({err})

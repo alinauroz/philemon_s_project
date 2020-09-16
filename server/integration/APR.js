@@ -56,7 +56,20 @@ loadFile = async path_ => {
 
 const saveMany = async data => {
     try {
-        return await APRModel.insertMany(data)
+        let duplicate = [];
+        await Promise.all(data.map(async APR => {
+            let d = await search({APR_REQ_NUM: APR.APR_REQ_NUM});
+            if (d[0]) {
+                duplicate.push(APR.APR_REQ_NUM);
+                console.log("DUP")
+            }
+            else {
+                let APR_ = new APRModel(APR);
+                await APR_.save();
+            }
+        }));
+        console.log("DUP->" + duplicate)
+        return {duplicate}
     }
     catch (err) {
         throw err;

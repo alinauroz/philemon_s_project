@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 
 const APRSchema = {
     "APR_REQ_NUM":{
-       "type":"string"
+       "type":"string",
+       "unique": true
     },
     "FY_APR":{
        "type":"string"

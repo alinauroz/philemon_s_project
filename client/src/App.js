@@ -112,7 +112,6 @@ class App extends React.Component{
     let file = e.target.files[0];
     const fd = new FormData();
     fd.append('csv', file);
-    console.log(file);
     // send `POST` request
     fetch('http://localhost:3002/APR/csv', {
         method: 'POST',
@@ -120,12 +119,7 @@ class App extends React.Component{
     })
     .then(res => res.json())
     .then(json => {
-      if ('name' in json) {
-        alert("Uploaded")
-      }
-      else {
-        alert("Some error in uploading")
-      }
+      console.log(json)
     })
     .catch(err => alert(err));
   }
