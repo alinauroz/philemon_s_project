@@ -176,7 +176,7 @@ class App extends React.Component{
           </div>
           <div style={{display: this.state.newFormView}}>
               <br />
-              <input type = 'button' value = 'Back' onClick = {this.hideNewForm} />
+              <input type = 'button' className = 'button' value = 'Back' onClick = {this.hideNewForm} />
               <br />
               <UploadCSV 
                 onChange = {this.uploadFile}

@@ -20,7 +20,6 @@ export default class extends React.Component {
         })
         .then(res => res.json())
         .then(json => {
-          console.log(json)
           this.setState({
               name: file.name,
               duplicates: json.duplicates,
@@ -61,7 +60,7 @@ export default class extends React.Component {
                                 className = 'app-blue-button'
                             />
                             {
-                                this.state.total || true ? 
+                                this.state.total ? 
                                 (
                                     <>
                                     <div style={{fontSize: 13, fontWeight: 'bold', wdith: "calc(100% - 20px)", marginLeft: 10}}>
