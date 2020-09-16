@@ -38,7 +38,7 @@ export default class Form extends React.Component {
     render () {
         return (
             <div className = 'container' style = {{width: 600, display: "inline-block"}}>
-                <p>Form</p>
+                <p style={{margin:10,fontWeight: 'bold'}}>Form</p>
                 {
                     toCollect.map(field => {
                         return <input type = 'text' onChange = {this.onChange_} name = {toProcessCase(field)} placeholder = {field} className = 'form-input' />

@@ -8,6 +8,7 @@ export default class APR extends React.Component {
         this.state = {
             detailView: "none",
             updateView: "none",
+            commentBox: "none",
             updated: {}
         }
     }
@@ -65,12 +66,21 @@ export default class APR extends React.Component {
             <div className = 'apr-detail-container' style={{display: this.state.detailView}}>
                 <input type = 'button' onClick = {() => {this.setState({detailView:"none"})}} value = 'Hide' />
                 <div className = 'apr-detail'>
-                    <input class = 'button'type = 'button' value = 'View Details' onClick = {() => {this.setState({detailsView_: "block", updateView: "none"})}} />
-                    <input class = 'button' type = 'button' value = 'View Update Form' onClick = {() => {this.setState({detailsView_: "none", updateView: "block"})}} />
+                    <input class = 'button'type = 'button' value = 'View Details' onClick = {() => {this.setState({detailsView_: "block", updateView: "none", commentBox: "none"})}} />
+                    <input class = 'button' type = 'button' value = 'View Update Form' onClick = {() => {this.setState({detailsView_: "none", updateView: "block", commentBox: "none"})}} />
+                    <input class = 'button' type = 'button' value = 'Comments' onClick = {() => {this.setState({detailsView_: "none", updateView: "none", commentBox: "block"})}} />
+                    
                     <div style = {{display:this.state.detailsView_}}>
                     {
                         this.getDetails()
                     }
+                    </div>
+                    <div style = {{display:this.state.commentBox}}>
+                    {
+                        <textarea placeholder = 'Comment' style = {{width:"70%", margin: "10px 5px", padding: 10}}>{this.state.comment}</textarea>
+                    }
+                    <br />
+                    <input type = 'button' value = 'Comment' className = 'save-apr-button'/>
                     </div>
                     <div style = {{display:this.state.updateView}}>
                     {
